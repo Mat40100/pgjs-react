@@ -16,7 +16,7 @@ import { Events } from "./types/EventsEnum";
 import { OAuthMethods } from "./utils/constants";
 import { loadPGJS } from "./utils/loadPGJS";
 
-const PGJSContext = createContext<ProviderProps>({
+export const PGJSContext = createContext<ProviderProps>({
   initPGJS: () => null,
   setPaymentMethod: () => null,
   setInstrument: () => null,

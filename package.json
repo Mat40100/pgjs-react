@@ -1,14 +1,14 @@
 {
-  "name": "@paygreen/pgjs-react",
-  "version": "0.1.1",
-  "description": "This library offers a simple integration of PayGreenJS in an React app",
+  "name": "@mat40100/pgjs-react",
+  "version": "0.1.15",
+  "description": "Fork of PayGreenJS in an React app",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "dist/pgjs-react.js",
-  "module": "dist/pgjs-react.mjs",
-  "typings": "dist/pgjs-react.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/types/index.d.ts",
   "input": "rollup.config.js",
   "directories": {
     "example": "examples"
@@ -17,23 +17,25 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
     "prepackpackage": "npm run build",
+    "prepublishOnly": "rm -r ./dist && npm run build",
     "packpackage": "npm run prepackpackage && npm pack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PayGreen/pgjs-react.git"
+    "url": "git+ssh://git@github.com/Mat40100/pgjs-react.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PayGreen/pgjs-react/issues"
+    "url": "https://github.com/Mat40100/pgjs-react/issues"
   },
-  "homepage": "https://github.com/PayGreen/pgjs-react#readme",
+  "homepage": "https://github.com/Mat40100/pgjs-react#readme",
   "dependencies": {
     "@types/react": "^18.2.16",
     "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup-plugin-generate-package-json": "^3.2.0",
     "tslib": "^2.6.1"
   },
   "devDependencies": {
